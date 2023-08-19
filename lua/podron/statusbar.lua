@@ -14,6 +14,36 @@ vim.g["airline#extensions#branch#empty_message"] = ''
 vim.g["airline#extensions#branch#displayed_head_limit"] = 30
 vim.g["airline#extensions#branch#sha1_len"] = 30
 vim.g["airline#extensions#whitespace#enabled"] = 0
+vim.g["airline#extensions#tagbar#enabled"] = 1
+-- vim.cmd[[ let g:airline#extensions#tagbar#flags = 'f' ]]
+vim.cmd[[ let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 'i:imports:0',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+	\ }
+]]
 vim.cmd[[ let g:airline_mode_map = {
       \ '__'     : '-',
       \ 'c'      : 'C',
@@ -43,7 +73,7 @@ vim.g["airline_right_sep"] = ''
 
 -- setting sections
 vim.g["airline_section_c"] = ''
-vim.g["airline_section_x"] = ''
+-- vim.g["airline_section_x"] = 'tagbar'
 vim.g["airline_section_z"] = '%c'
 
 vim.cmd [[ 
