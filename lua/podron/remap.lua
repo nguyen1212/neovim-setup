@@ -7,8 +7,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- navigate cursor
 vim.keymap.set({"n", "v"}, "0", "$")
 vim.keymap.set({"n", "v"}, "9", "0")
-vim.keymap.set("i", "<leader>h", "<Home>")
-vim.keymap.set("i", "<leader>l", "<End>")
+vim.keymap.set("i", "<C-9>", "<Home>")
+vim.keymap.set("i", "<C-0>", "<End>")
 
 -- move text and block
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -57,7 +57,7 @@ vim.keymap.set("n", "<Tab>n", ":NERDTreeFocus<CR>")
 vim.keymap.set("n", "<Tab>t", ":NERDTreeToggle<CR>")
 
 -- telescope
-vim.keymap.set("n", "<leader>pf", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>pf", ":Telescope find_files hidden=true<CR>")
 vim.keymap.set("n", "<C-p>", ":Telescope git_files<CR>")
 vim.keymap.set("n", "<leader>l", ":Telescope buffers<CR>")
 vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>")
@@ -71,8 +71,8 @@ vim.keymap.set("n", "gb", ":Telescope git_branches<CR>")
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "]h", "<Plug>(GitGutterNextHunk)")
 vim.keymap.set("n", "[h", "<Plug>(GitGutterPrevHunk)")
-vim.keymap.set("n", "dfo", ":DiffviewOpen")
-vim.keymap.set("n", "dfc", ":DiffviewClose")
+vim.keymap.set("n", "dfo", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "dfc", ":DiffviewClose<CR>")
 
 -- startify
 vim.keymap.set("n", "<leader>s", ":Startify<CR>")

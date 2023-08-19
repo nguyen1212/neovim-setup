@@ -23,7 +23,8 @@ vim.cmd [[ au FileType go nmap <leader>av <plug>(go-alternate-vertical) ]]
 vim.cmd [[ au FileType go nmap <leader>aa :GoAlternate!<CR> ]]
 
 -- Common Go commands
-vim.cmd [[ au FileType go nmap <leader>c :GoCoverageToggle<CR> ]]
+vim.cmd [[ au FileType go nmap <leader>ct :GoCoverageToggle<CR> ]]
+vim.cmd [[ au FileType go nmap <leader>c :GoCoverage<CR> ]]
 vim.cmd [[ au FileType go nmap <leader>t :GoTestFunc<CR> ]]
 vim.cmd [[ au FileType go nmap <leader><S-t> :GoTestFile<CR> ]]
 vim.cmd [[ au FileType go nmap gie <plug>(go-iferr) ]]

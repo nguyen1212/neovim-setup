@@ -66,7 +66,8 @@ return require('packer').startup(function(use)
   -- status bar
   use {
 	  'vim-airline/vim-airline',
-	  'vim-airline/vim-airline-themes'
+	  'vim-airline/vim-airline-themes',
+	  'majutsushi/tagbar'
   }
 
   -- terminal 
