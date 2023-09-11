@@ -61,18 +61,36 @@ vim.keymap.set("n", "<leader>pf", ":Telescope find_files hidden=true<CR>")
 vim.keymap.set("n", "<C-p>", ":Telescope git_files<CR>")
 vim.keymap.set("n", "<leader>l", ":Telescope buffers<CR>")
 vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>")
-vim.keymap.set("n", "<C-g>", ":Telescope grep_string<CR>")
-vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<C-g>", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+vim.keymap.set("n", "<leader>g", ":Telescope grep_string<CR>")
 vim.keymap.set("n", "gi", ":Telescope lsp_implementations<CR>")
+vim.keymap.set('n', '<leader>fs', function()
+	require('telescope.builtin').lsp_document_symbols({
+		symbols = {
+			"constant",
+			"interface",
+			"function",
+			"method",
+			"struct"
+		},
+		symbol_width = 50,
+	});
+end)
+-- vim.keymap.set("n", "<C-f>", function ()
+-- 	require('telescope.actions').preview_scrolling_left();
+-- end)
 
--- git keymap
 vim.keymap.set("n", "gB", ":Git blame<CR>")
 vim.keymap.set("n", "gb", ":Telescope git_branches<CR>")
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-vim.keymap.set("n", "]h", "<Plug>(GitGutterNextHunk)")
-vim.keymap.set("n", "[h", "<Plug>(GitGutterPrevHunk)")
+vim.keymap.set("n", "]x", "<Plug>(GitGutterNextHunk)")
+vim.keymap.set("n", "[x", "<Plug>(GitGutterPrevHunk)")
 vim.keymap.set("n", "dfo", ":DiffviewOpen<CR>")
 vim.keymap.set("n", "dfc", ":DiffviewClose<CR>")
 
 -- startify
 vim.keymap.set("n", "<leader>s", ":Startify<CR>")
+
+-- quickfix 
+vim.keymap.set("n", "<leader>q", ":copen<CR>")
+vim.keymap.set("n", "<leader>Q", ":cclose<CR>")

@@ -8,11 +8,18 @@ return require('packer').startup(function(use)
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.2',
 	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+	  requires = {
+		  {'nvim-lua/plenary.nvim'},
+		  { "nvim-telescope/telescope-live-grep-args.nvim" },
+	  },
+	  config = function()
+		  require("telescope").load_extension("live_grep_args")
+	  end
   }
 
   -- find files
   use {	  'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
 
   -- auto complete
   use {
@@ -70,10 +77,22 @@ return require('packer').startup(function(use)
 	  'majutsushi/tagbar'
   }
 
+  -- progress
+  use {
+	  'linrongbin16/lsp-progress.nvim',
+	  requires = {'nvim-tree/nvim-web-devicons'},
+	  config = function()
+		  require('lsp-progress').setup()
+	  end
+  }
+
   -- terminal 
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
   -- icon
   use  'ryanoasis/vim-devicons'
+
+  -- csv
+  use 'mechatroner/rainbow_csv'
 
 end)
