@@ -28,7 +28,7 @@ brew install rg
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
-- use any new package in `packer.lua` and `:PackerSync` to sync new package.
+- add any new package in `packer.lua` and `:PackerSync` to sync new package.
 
 ## terminal
 - install `iterm2`
